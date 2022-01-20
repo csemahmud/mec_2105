@@ -9,8 +9,12 @@
 /**
  * Description of login_model
  *
- * @author csema_000
+ * @author Mahmudul Hasan Khan CSE
  */
-class login_model {
+class Login_Model extends CI_Model {
     //put your code here
+    
+    public function select_admin_by_email_password($admin_email,$admin_password) {
+        return $this->admin_model->select_admin_by_email_password($admin_email,$admin_password);
+    }
 }

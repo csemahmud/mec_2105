@@ -9,8 +9,20 @@
 /**
  * Description of admin_model
  *
- * @author csema_000
+ * @author Mahmudul Hasan Khan CSE
  */
-class admin_model {
+class Admin_Model extends CI_Model {
     //put your code here
+    
+    public function select_admin_by_email_password($admin_email,$admin_password) {
+        $this->db->select("*");
+        $this->db->from("tbl_admin");
+        $this->db->where("admin_email",$admin_email);       
+        $this->db->where("admin_password",$admin_password);
+        return $this->db->get()->row();
+    }
+    
+    public function select_all_products() {
+        return $this->product_model->select_all_products();
+    }
 }

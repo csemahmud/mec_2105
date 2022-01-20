@@ -13,10 +13,81 @@
  * @author Mahmudul Hasan Khan CSE
  */
 
-class front_controller extends CI_Controller {
+class Front_Controller extends CI_Controller {
     //put your code here/
-	public function index()
+    
+	public function home()
 	{
-		$this->load->view('welcome_message');
+            $data = array();
+            $data["title"] = "Angular JS";
+            $this->load->view('front/angular_js_ui', $data);
 	}
+        
+        public function products_json(){
+            $data = array();
+            $all_published_products = $this->front_model->select_all_published_products_joining_category_joining_manufacturer();
+            $products_json_str = '{"products":[';
+            $count1 = 0;
+            foreach ($all_published_products as $v_product) {
+                $count1++;
+                $products_json_str .= "{";
+                $array1 = array();
+                $i = 0;
+                foreach ($v_product as $key => $value) {
+                    $array1[$i] = '"'.$key.'":';
+                    if(is_int($value) || is_double($value) || is_numeric($value)){
+                        $array1[$i] .= $value;
+                    } else {
+                        $array1[$i] .= '"'.$value.'"';
+                    }
+                    $i++;
+                }
+                $products_json_str .= implode(",", $array1);
+                $products_json_str .= "}";
+                if($count1 < count($all_published_products)){
+                    $products_json_str .= ",";
+                }
+            }
+            $products_json_str .= "]}";
+            $data['all_published_products'] = $all_published_products;
+            $data['products_json_str'] = $products_json_str;
+            $this->load->view('shared/products_json', $data);
+        }
+        
+        public function index() {
+            
+            $mdata = array();
+            $mdata["all_published_categories"] = $this->front_model->select_categories_by_publication_status(1);
+            $mdata["all_published_manufacturers"] = $this->front_model->select_manufacturers_by_publication_status(1);
+            $data = array();
+            $data["submenu"] = $this->load->view("front/home_submenu_component",$mdata,TRUE);
+            $data["main_content"] = $this->load->view("front/home_products_component",$mdata,TRUE);
+            $data["home_scripts"] = $this->load->view("front/home_scripts_component",$mdata,TRUE);
+            $data["home_slider"] = TRUE;
+            $data["title"] = "Ajax";
+            $this->load->view("shared/front_master_ui", $data);
+            
+        }
+        
+        public function ajax_product_home($category_id, $manufacturer_id) {
+            $cdata = array();
+            if(($category_id == 'all')&&($manufacturer_id == 'all')){
+                
+                $cdata["selected_products"] = $this->front_model->select_products_by_publication(1);
+                
+            } elseif ($category_id == 'all') {
+                
+                $cdata["selected_products"] = $this->front_model->select_products_by_manufacturer_publication($manufacturer_id, 1);
+            
+            } elseif ($manufacturer_id == 'all') {
+                
+                $cdata["selected_products"] = $this->front_model->select_products_by_category_publication($category_id, 1);
+                
+            } else {
+                
+                $cdata["selected_products"] = $this->front_model->select_products_by_category_manufacturer_publication($category_id, $manufacturer_id, 1);
+                
+            }
+            $this->load->view("front/ajax_product_home", $cdata);
+        }
 }
