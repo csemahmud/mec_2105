@@ -9,8 +9,14 @@
 /**
  * Description of cart_controller
  *
- * @author csema_000
+ * @author Mahmudul Hasan Khan CSE
  */
-class cart_controller extends CI_Controller {
+class Cart_Controller extends CI_Controller {
     //put your code here
+    
+    public function index() {
+        
+        $mdata = array();
+        
+    }
 }
