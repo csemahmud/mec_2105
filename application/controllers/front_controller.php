@@ -90,4 +90,18 @@ class Front_Controller extends CI_Controller {
             }
             $this->load->view("front/ajax_product_home", $cdata);
         }
+        
+        public function details_product($product_id){
+            
+            $mdata = array();
+            $mdata["all_published_categories"] = $this->front_model->select_categories_by_publication_status(1);
+            $mdata["all_published_manufacturers"] = $this->front_model->select_manufacturers_by_publication_status(1);
+            $cdata = array();
+            $cdata["product_info"] = $this->front_model->select_product_id_joining_manufacturer($product_id);
+            $data = array();
+            $data["submenu"] = $this->load->view("front/other_submenu_component", $mdata, TRUE);
+            $data["main_content"] = $this->load->view("front/details_product_component", $cdata, TRUE);
+            $data["title"] = "Details Product";
+            $this->load->view("shared/front_master_ui", $data);
+        }
 }
