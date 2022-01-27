@@ -57,6 +57,7 @@ class Front_Controller extends CI_Controller {
         public function index() {
             
             $mdata = array();
+            $mdata["home"] = true;
             $mdata["all_published_categories"] = $this->front_model->select_categories_by_publication_status(1);
             $mdata["all_published_manufacturers"] = $this->front_model->select_manufacturers_by_publication_status(1);
             $data = array();
@@ -91,6 +92,38 @@ class Front_Controller extends CI_Controller {
             $this->load->view("front/ajax_product_home", $cdata);
         }
         
+        public function home_by_category($category_id, $category_name){
+            
+            $mdata = array();
+            $mdata["all_published_categories"] = $this->front_model->select_categories_by_publication_status(1);
+            $mdata["all_published_manufacturers"] = $this->front_model->select_manufacturers_by_publication_status(1);
+            $jsdata = array();
+            $jsdata["category_id"] = $category_id;
+            $jsdata["category_name"] = $category_name;
+            $data = array();
+            $data["submenu"] = $this->load->view("front/home_submenu_component", $mdata, TRUE);
+            $data["main_content"] = $this->load->view("front/home_product_component", '', TRUE);
+            $data["home_scripts"] = $this->load->view("front/home_scripts_component", $jsdata, TRUE);
+            $data["title"] = "Category";
+            $this->load->view("shared/front_master_ui", $data);
+        }
+        
+        public function home_by_manufacturer($manufacturer_id, $manufacturer_name){
+            
+            $mdata = array();
+            $mdata["all_published_categories"] = $this->front_model->select_categories_by_publication_status(1);
+            $mdata["all_published_manufacturers"] = $this->front_model->select_manufacturers_by_publication_status(1);
+            $jsdata = array();
+            $jsdata["manufacturer_id"] = $manufacturer_id;
+            $jsdata["manufacturer_name"] = $manufacturer_name;
+            $data = array();
+            $data["submenu"] = $this->load->view("front/home_submenu_component", $mdata, TRUE);
+            $data["main_content"] = $this->load->view("front/home_product_component", '', TRUE);
+            $data["home_scripts"] = $this->load->view("front/home_scripts_component", $jsdata, TRUE);
+            $data["title"] = "Manufacturer";
+            $this->load->view("shared/front_master_ui", $data);
+        }
+        
         public function details_product($product_id){
             
             $mdata = array();
@@ -99,7 +132,7 @@ class Front_Controller extends CI_Controller {
             $cdata = array();
             $cdata["product_info"] = $this->front_model->select_product_id_joining_manufacturer($product_id);
             $data = array();
-            $data["submenu"] = $this->load->view("front/other_submenu_component", $mdata, TRUE);
+            $data["submenu"] = $this->load->view("front/home_submenu_component", $mdata, TRUE);
             $data["main_content"] = $this->load->view("front/details_product_component", $cdata, TRUE);
             $data["title"] = "Details Product";
             $this->load->view("shared/front_master_ui", $data);
