@@ -37,7 +37,7 @@ class Cart_Controller extends CI_Controller {
         }
         
         $data = array();
-        $data["submenu"] = $this->load->view("front/other_submenu_component",$mdata,TRUE);
+        $data["submenu"] = $this->load->view("front/home_submenu_component",$mdata,TRUE);
         $data["main_content"] = $this->load->view("cart/cart_component",$cdata,TRUE);        
         $data["title"] = "Cart";
         $this->load->view('shared/front_master_ui', $data);

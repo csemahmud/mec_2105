@@ -41,4 +41,8 @@ class Front_Model extends CI_Model {
     public function select_products_by_category_manufacturer_publication($category_id, $manufacturer_id, $pr_publication_status) {
         return $this->product_model->select_products_by_category_manufacturer_publication($category_id, $manufacturer_id, $pr_publication_status);
     }
+    
+    public function select_product_by_id_joining_manufacturer($product_id) {
+        return $this->product_model->select_product_by_id_joining_manufacturer($product_id);
+    }
 }

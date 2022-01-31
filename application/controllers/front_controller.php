@@ -62,8 +62,8 @@ class Front_Controller extends CI_Controller {
             $mdata["all_published_manufacturers"] = $this->front_model->select_manufacturers_by_publication_status(1);
             $data = array();
             $data["submenu"] = $this->load->view("front/home_submenu_component",$mdata,TRUE);
-            $data["main_content"] = $this->load->view("front/home_products_component",$mdata,TRUE);
-            $data["home_scripts"] = $this->load->view("front/home_scripts_component",$mdata,TRUE);
+            $data["main_content"] = $this->load->view("front/home_products_component",'',TRUE);
+            $data["home_scripts"] = $this->load->view("front/home_scripts_component",'',TRUE);
             $data["home_slider"] = TRUE;
             $data["title"] = "Ajax";
             $this->load->view("shared/front_master_ui", $data);
@@ -130,7 +130,7 @@ class Front_Controller extends CI_Controller {
             $mdata["all_published_categories"] = $this->front_model->select_categories_by_publication_status(1);
             $mdata["all_published_manufacturers"] = $this->front_model->select_manufacturers_by_publication_status(1);
             $cdata = array();
-            $cdata["product_info"] = $this->front_model->select_product_id_joining_manufacturer($product_id);
+            $cdata["product_info"] = $this->front_model->select_product_by_id_joining_manufacturer($product_id);
             $data = array();
             $data["submenu"] = $this->load->view("front/home_submenu_component", $mdata, TRUE);
             $data["main_content"] = $this->load->view("front/details_product_component", $cdata, TRUE);

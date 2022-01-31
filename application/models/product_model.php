@@ -103,6 +103,14 @@ class Product_Model extends CI_Model {
         return $this->db->get()->row();
     }
     
+    public function select_product_by_id_joining_manufacturer($product_id) {
+        $this->db->select('*');
+        $this->db->from('tbl_product');
+        $this->db->join('tbl_manufacturer', 'tbl_manufacturer.manufacturer_id = tbl_product.manufacturer_id');
+        $this->db->where('product_id', $product_id);
+        return $this->db->get()->row();
+    }
+    
     public function update_product_by_id($data, $product_id) {
         $this->db->where("product_id", $product_id);
         return $this->db->update("tbl_product", $data);
