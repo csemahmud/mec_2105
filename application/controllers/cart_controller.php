@@ -19,6 +19,7 @@ class Cart_Controller extends CI_Controller {
         $mdata = array();
         $mdata['all_published_categories'] = $this->cart_model->select_categories_by_publication_status(1);
         $mdata['all_published_manufacturers'] = $this->cart_model->select_manufacturers_by_publication_status(1);
+        
         $cdata = array();
         $customer_id = $this->session->userdata("customer_id");
         $shipping_id = $this->session->userdata("shipping_id");
