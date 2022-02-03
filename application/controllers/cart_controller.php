@@ -56,9 +56,9 @@ class Cart_Controller extends CI_Controller {
             
         );
         
-        $this->cart->insert("data");
+        $this->cart->insert($data);
         
-        /*echo "<pre>";
+        /*secho "<pre>";
         print_r($data);
         print_r($this->cart->contents());
         echo "</pre>";
@@ -79,7 +79,7 @@ class Cart_Controller extends CI_Controller {
         
     }
     
-    public function remove_from_curt($rowid){
+    public function remove_from_cart($rowid){
         
         $data = array(
             'rowid' => $rowid,
@@ -91,7 +91,7 @@ class Cart_Controller extends CI_Controller {
         
     }
     
-    public function remove_from_curt_home($rowid){
+    public function remove_from_cart_home($rowid){
         
         $data = array(
             'rowid' => $rowid,
@@ -103,7 +103,7 @@ class Cart_Controller extends CI_Controller {
         
     }
     
-    public function remove_from_curt_front($rowid){
+    public function remove_from_cart_front($rowid){
         
         $data = array(
             'rowid' => $rowid,

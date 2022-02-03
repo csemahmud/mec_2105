@@ -119,9 +119,9 @@
                                     <td class="v_align_m">Quantity:</td>
                                     <td class="v_align_m">
                                             <div class="clearfix quantity r_corners d_inline_middle f_size_medium color_dark">
-                                                    <button class="bg_tr d_block f_left" data-direction="down">-</button>
-                                                    <input type="text" id="qty" name="qty" readonly value="1" class="f_left">
-                                                    <button class="bg_tr d_block f_left" data-direction="up">+</button>
+                                                    
+                                                    <input type="text" id="qty" name="qty" value="1" class="f_left">
+                                                    
                                             </div>
                                         <input type="hidden" id="product_id" name="product_id" value="<?php echo $product_info->product_id; ?>">
                                         <input type="hidden" id="product_name" name="product_name" value="<?php echo $product_info->product_name; ?>">

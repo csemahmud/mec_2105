@@ -12,7 +12,7 @@
                                
                                <?php } else { ?>
                                
-                               href="<?php echo base_erl() ?>front_controller.aspx"
+                               href="<?php echo base_url(); ?>"
                                
                                <?php } ?>
                                
@@ -56,7 +56,7 @@
                                
                                <?php } else { ?>
                                
-                               href="<?php echo base_erl() ?>front_controller.aspx"
+                               href="<?php echo base_url(); ?>"
                                
                                <?php } ?>
                                

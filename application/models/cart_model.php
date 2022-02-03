@@ -9,8 +9,16 @@
 /**
  * Description of cart_model
  *
- * @author csema_000
+ * @author Mahmudul Hasan Khan CSE
  */
-class cart_model {
+class Cart_Model extends CI_Model {
     //put your code here
+    
+    public function select_categories_by_publication_status($ct_publiction_status) {
+        return $this->category_model->select_categories_by_publication_status($ct_publiction_status);
+    }
+    
+    public function select_manufacturers_by_publication_status($mn_publiction_status) {
+        return $this->manufacturer_model->select_manufacturers_by_publication_status($mn_publiction_status);
+    }
 }

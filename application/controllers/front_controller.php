@@ -102,7 +102,7 @@ class Front_Controller extends CI_Controller {
             $jsdata["category_name"] = $category_name;
             $data = array();
             $data["submenu"] = $this->load->view("front/home_submenu_component", $mdata, TRUE);
-            $data["main_content"] = $this->load->view("front/home_product_component", '', TRUE);
+            $data["main_content"] = $this->load->view("front/home_products_component", '', TRUE);
             $data["home_scripts"] = $this->load->view("front/home_scripts_component", $jsdata, TRUE);
             $data["title"] = "Category";
             $this->load->view("shared/front_master_ui", $data);
@@ -118,7 +118,7 @@ class Front_Controller extends CI_Controller {
             $jsdata["manufacturer_name"] = $manufacturer_name;
             $data = array();
             $data["submenu"] = $this->load->view("front/home_submenu_component", $mdata, TRUE);
-            $data["main_content"] = $this->load->view("front/home_product_component", '', TRUE);
+            $data["main_content"] = $this->load->view("front/home_products_component", '', TRUE);
             $data["home_scripts"] = $this->load->view("front/home_scripts_component", $jsdata, TRUE);
             $data["title"] = "Manufacturer";
             $this->load->view("shared/front_master_ui", $data);
@@ -129,12 +129,24 @@ class Front_Controller extends CI_Controller {
             $mdata = array();
             $mdata["all_published_categories"] = $this->front_model->select_categories_by_publication_status(1);
             $mdata["all_published_manufacturers"] = $this->front_model->select_manufacturers_by_publication_status(1);
+            /*echo "<pre>";
+            print_r($mdata);
+            echo "</pre>";
+            exit();*/
             $cdata = array();
             $cdata["product_info"] = $this->front_model->select_product_by_id_joining_manufacturer($product_id);
+            /*echo "<pre>";
+            print_r($cdata);
+            echo "</pre>";
+            exit();*/
             $data = array();
             $data["submenu"] = $this->load->view("front/home_submenu_component", $mdata, TRUE);
             $data["main_content"] = $this->load->view("front/details_product_component", $cdata, TRUE);
             $data["title"] = "Details Product";
+            /*echo "<pre>";
+            print_r($data);
+            echo "</pre>";
+            exit();*/
             $this->load->view("shared/front_master_ui", $data);
         }
 }

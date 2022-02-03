@@ -42,10 +42,10 @@
                                             <form action="<?php echo base_url();?>cart_controller/update_cart" method="post">
                                                 <div class="clearfix quantity r_corners d_inline_middle f_size_medium color_dark m_bottom_10">
                                                         
-                                                        <button class="bg_tr d_block f_left" data-direction="down">-</button>
-                                                        <input type="text" id="qty" name="qty" readonly value="<?php echo $content_value['qty'];?>"  class="f_left">
-                                                        <button class="bg_tr d_block f_left" data-direction="up">+</button>
-                                                        <input type="hidden" id="rowid" name="rowid" readonly value="<?php echo $content_value['rowid'];?>">
+                                                        
+                                                        <input type="text" id="qty" name="qty" value="<?php echo $content_value['qty'];?>"  class="f_left">
+                                                        
+                                                        <input type="hidden" id="rowid" name="rowid" value="<?php echo $content_value['rowid'];?>">
                                                         
                                                 </div>
                                                 <div>
