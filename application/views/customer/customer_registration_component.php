@@ -12,17 +12,25 @@
 									<div id="tab-1">
 										<!--login form-->
 										<h5 class="fw_medium m_bottom_15">I am Already Registered</h5>
-										<form>
+										<form action="<?php echo base_url()?>customer_controller/customer_login" 
+                                                                                      method="post" onsubmit="return validateStandard(this);">
 											<ul>
 												<li class="clearfix m_bottom_15">
 													<div class="half_column type_2 f_left">
-														<label for="username" class="m_bottom_5 d_inline_b">Username</label>
-														<input type="text" id="username" name="" class="r_corners full_width m_bottom_5">
-														<a href="#" class="color_dark f_size_medium">Forgot your username?</a>
+														<label for="login_email" class="m_bottom_5 d_inline_b">Email Address :</label>
+														<input type="text" id="login_email" name="login_email" regexp="JSVAL_RX_EMAIL"
+                                                                                                                       err="Please Enter Valid Email Address ....." 
+                                                                                                                       maxlength="100" placeholder="email.address@Qexample.com" required="required"
+                                                                                                                       class="r_corners full_width m_bottom_5">
+														<a href="#" class="color_dark f_size_medium">Forgot your Email Address ?</a>
 													</div>
 													<div class="half_column type_2 f_left">
-														<label for="pass" class="m_bottom_5 d_inline_b">Password</label>
-														<input type="password" id="pass" name="" class="r_corners full_width m_bottom_5">
+														<label for="login_password" class="m_bottom_5 d_inline_b">Password :</label>
+														<input type="password" id="login_password" name="login_password"
+                                                                                                                       regexp="JSVAL_RX_ALPHA_NUMERIC_WITHOUT_HIFANE"
+                                                                                                                       err="Password Must Be Alpha Numeric Character without Hifane"
+                                                                                                                       placeholder="Enter Password ....." required="required"
+                                                                                                                       class="r_corners full_width m_bottom_5">
 														<a href="#" class="color_dark f_size_medium">Forgot your password?</a>
 													</div>
 												</li>
