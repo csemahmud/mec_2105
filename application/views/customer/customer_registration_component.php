@@ -44,19 +44,46 @@
 								</section>
 							</div>
                                                         <!--tabs-->
+                                                        <form name="customer_registration_form" action="<?php echo base_url();?>customer_controller/register_customer" 
+                                                              method="post" onsubmit="return validateStandard(this);">
 							<div class="tabs m_bottom_45">
 								<section class="tabs_content shadow r_corners">
 									<div id="tab-2">
                                                                             <h2 class="color_dark tt_uppercase m_bottom_25">Customer Registration</h2>
-										<form>
+										
 											<ul>
 												<li class="m_bottom_25">
-													<label for="d_name" class="d_inline_b m_bottom_5 required">Displayed Name</label>
-													<input type="text" id="d_name" name="" class="r_corners full_width">
+													<label for="customer_email" class="m_bottom_5 d_inline_b">Email Address :</label>
+                                                                                                        <input type="text" id="customer_email" name="customer_email" regexp="JSVAL_RX_EMAIL"
+                                                                                                               err="Please Enter Valid Email Address ....." 
+                                                                                                               maxlength="100" placeholder="email.address@Qexample.com" required="required"
+                                                                                                               onblur="check_email()" class="r_corners full_width m_bottom_5">
+                                                                                                        <h3 id="message_unique_email" class="success_message"></h3>
+                                                                                                        <h3 id="error_unique_email" class="error_message"></h3>
 												</li>
 												<li class="m_bottom_5">
-													<input type="checkbox" class="d_none" name="checkbox_5" id="checkbox_5"><label for="checkbox_5">Create an account</label>
+													<label for="customer_password" class="m_bottom_5 d_inline_b">Password :</label>
+														<input type="password" id="customer_password" name="customer_password"
+                                                                                                                       regexp="JSVAL_RX_ALPHA_NUMERIC_WITHOUT_HIFANE"
+                                                                                                                       err="Password Must Be Alpha Numeric Character without Hifane"
+                                                                                                                       placeholder="Enter Password ....." required="required"
+                                                                                                                       class="r_corners full_width m_bottom_5">
 												</li>
+												<li>
+													<label for="c_repeat_password" class="m_bottom_5 d_inline_b">Confirm Password :</label>
+														<input type="password" id="c_repeat_password" name="c_repeat_password" equals="customer_password"
+                                                                                                                       regexp="JSVAL_RX_ALPHA_NUMERIC_WITHOUT_HIFANE"
+                                                                                                                       err="Password and Confirm Password did not match"
+                                                                                                                       onkeyup="match_value('c_repeat_password', 'customer_password', 'password_match')"
+                                                                                                                       placeholder="Confirm Password ....." required="required"
+                                                                                                                       class="r_corners full_width m_bottom_5">
+                                                                                                                <p id="password_match"></p>
+												</li>
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
 												<li class="m_bottom_15">
 													<label for="u_name" class="d_inline_b m_bottom_5 required">Username</label>
 													<input type="text" id="u_name" name="" class="r_corners full_width">
@@ -73,8 +100,13 @@
 													<label for="u_repeat_pass" class="d_inline_b m_bottom_5 required">Confirm Password</label>
 													<input type="password" id="u_repeat_pass" name="" class="r_corners full_width">
 												</li>
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
 											</ul>
-										</form>
+										
 									</div>
 								</section>
 							</div>
@@ -167,11 +199,11 @@
 													<input type="text" id="fax_1" name="" class="r_corners full_width">
 												</li>
 											</ul>
-										</form>
+									
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-6">
 										<h5 class="fw_medium m_bottom_15">Ship To</h5>
-										<form>
+										
 											<ul>
 												<li class="m_bottom_5">
 													<input type="checkbox" checked class="d_none" name="checkbox_6" id="checkbox_6"><label for="checkbox_6">Add/Edit shipment address</label>
@@ -250,10 +282,21 @@
 													<input type="text" id="fax_2" name="" class="r_corners full_width">
 												</li>
 											</ul>
-										</form>
+										
 									</div>
 								</div>
 							</div>
+                                                        </form>
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
 							<h2 class="tt_uppercase color_dark m_bottom_30">Shipment Information</h2>
 							<div class="bs_inner_offsets bg_light_color_3 shadow r_corners m_bottom_45">
 								<figure class="block_select clearfix relative m_bottom_15">
