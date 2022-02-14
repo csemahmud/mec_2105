@@ -79,47 +79,67 @@
                                                                                                                        class="r_corners full_width m_bottom_5">
                                                                                                                 <p id="password_match"></p>
 												</li>
-                                                                                                
-                                                                                                
-                                                                                                
-                                                                                                
-                                                                                                
-												<li class="m_bottom_15">
-													<label for="u_name" class="d_inline_b m_bottom_5 required">Username</label>
-													<input type="text" id="u_name" name="" class="r_corners full_width">
-												</li>
-												<li class="m_bottom_15">
-													<label for="u_email" class="d_inline_b m_bottom_5 required">Email</label>
-													<input type="email" id="u_email" name="" class="r_corners full_width">
-												</li>
-												<li class="m_bottom_15">
-													<label for="u_pass" class="d_inline_b m_bottom_5 required">Password</label>
-													<input type="password" id="u_pass" name="" class="r_corners full_width">
-												</li>
-												<li>
-													<label for="u_repeat_pass" class="d_inline_b m_bottom_5 required">Confirm Password</label>
-													<input type="password" id="u_repeat_pass" name="" class="r_corners full_width">
-												</li>
-                                                                                                
-                                                                                                
-                                                                                                
-                                                                                                
-                                                                                                
 											</ul>
 										
 									</div>
 								</section>
 							</div>
-							<h2 class="color_dark tt_uppercase m_bottom_25">Bill To &amp; Shipment Information</h2>
+							<h2 class="color_dark tt_uppercase m_bottom_25">Bill Information</h2>
 							<div class="bs_inner_offsets bg_light_color_3 shadow r_corners m_bottom_45">
 								<div class="row clearfix">
 									<div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_30">
 										<h5 class="fw_medium m_bottom_15">Bill To</h5>
-										<form>
+										
 											<ul>
 												<li class="m_bottom_15">
-													<label for="c_name_1" class="d_inline_b m_bottom_5">Company Name</label>
-													<input type="text" id="c_name_1" name="" class="r_corners full_width">
+													<label for="first_name" class="d_inline_b m_bottom_5">First Name :</label>
+													<input type="text" id="first_name" name="first_name"
+                                                                                                               regexp="JSVAL_RX_ALPHA" err="Please   Enter   Valid   First   Name   ....."
+                                                                                                               maxlength="50" required="required" placeholder="Enter First Name ....."
+                                                                                                               class="r_corners full_width">
+												</li>
+												<li class="m_bottom_15">
+													<label for="last_name" class="d_inline_b m_bottom_5">Last Name :</label>
+													<input type="text" id="last_name" name="last_name"
+                                                                                                               regexp="JSVAL_RX_ALPHA" err="Please   Enter   Valid   Last   Name   ....."
+                                                                                                               maxlength="50" required="required" placeholder="Enter Last Name ....."
+                                                                                                               class="r_corners full_width">
+												</li>
+												<li class="m_bottom_15">
+													<label for="mobile" class="d_inline_b m_bottom_5">Mobile No :</label>
+													<input type="text" id="mobile" name="mobile"
+                                                                                                               maxlength="14" required="required" placeholder="Enter Mobile No ....."
+                                                                                                               class="r_corners full_width">
+												</li>
+												<li class="m_bottom_15">
+													<label for="phone" class="d_inline_b m_bottom_5">Phone No :</label>
+													<input type="text" id="phone" name="phone"
+                                                                                                               maxlength="7" placeholder="Enter Phone No ....."
+                                                                                                               class="r_corners full_width">
+												</li>
+												<li class="m_bottom_15">
+													<label for="fax" class="d_inline_b m_bottom_5">Fax :</label>
+													<input type="text" id="fax" name="fax"
+                                                                                                               maxlength="7" placeholder="Enter Fax No ....."
+                                                                                                               class="r_corners full_width">
+												</li>
+												<li class="m_bottom_15">
+													<label for="company" class="d_inline_b m_bottom_5">Company Name :</label>
+													<input type="text" id="company" name="company"
+                                                                                                               maxlength="100" placeholder="Enter Company Name ....."
+                                                                                                               class="r_corners full_width">
+												</li>
+												<li class="m_bottom_15">
+													<label for="company" class="d_inline_b m_bottom_5">Address :</label>
+                                                                                                        <textarea name="address" rows="6" cols="44" 
+                                                                                                                  placeholder="Enter Full Mailing Address..." required="required" 
+                                                                                                                  spellcheck="true" tabindex="12"></textarea>
+												</li>
+												<li class="m_bottom_15">
+													<label for="city" class="d_inline_b m_bottom_5">City :</label>
+													<input type="text" id="city" name="city"
+                                                                                                               maxlength="50" placeholder="Enter City Name ....." required="required"
+                                                                                                               class="r_corners full_width">
 												</li>
 												<li class="m_bottom_15">
 													<label class="d_inline_b m_bottom_5">Title</label>
