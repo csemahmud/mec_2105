@@ -174,3 +174,39 @@
                 </div>
         </div>
 </form>
+
+<script type="text/javascript">
+    document.forms["customer_registration_form"].elements["country"].value = "BD";
+</script>
+
+<script type="text/javascript">
+    function match_value(input_id1, input_id2, input_id){
+        if(document.getElementById(input_id1).value.length < document.getElementById(input_id2).value.length){
+            document.getElementById(input_id).innerHTML = "<span> Type More .....  </span>";
+        }
+        else if(document.getElementById(input_id1).value.length !== document.getElementById(input_id2).value.length){
+            document.getElementById(input_id).innerHTML = "<span class='error_message'>" + input_id2 + "   does not match </span>";
+        }
+        else {
+            document.getElementById(input_id).innerHTML = "<span class='success_message'>" + input_id2 + "   has matched </span>";
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    
+    var is_email_unique = true;
+    
+    function check_email() {
+        
+        is_email_unique = false;
+        
+        var customer_email = document.getElementById("customer_email").value;
+        if(customer_email == ''){
+            document.getElementById("message_unique_email").innerHTML = '';
+            document.getElementById("error_unique_email").innerHTML = 'Email Address Can not be Empty';
+            is_email_unique = false;
+        }
+    }
+    
+</script>

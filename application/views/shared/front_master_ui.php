@@ -136,6 +136,7 @@
                 </style>
                 <script src="<?php echo base_url();?>mec_scripts/utiliy_scripts/country.js"></script>
                 <script src="<?php echo base_url();?>mec_scripts/utiliy_scripts/jsval.js"></script>
+                <script src="<?php echo base_url();?>mec_scripts/utiliy_scripts/xmlhttp.js"></script>
 	</head>
 	<body>
             <div class="div_style" ng-app="mec_2105_app">
