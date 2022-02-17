@@ -1,4 +1,3 @@
-
 <!--tabs-->
 <div class="tabs m_bottom_45">
         <!--tabs navigation-->
@@ -45,7 +44,7 @@
 </div>
 <!--tabs-->
 <form name="customer_registration_form" action="<?php echo base_url();?>customer_controller/register_customer" 
-      method="post" onsubmit="return validateStandard(this);">
+      method="post" onsubmit="return validate_registraion(this);">
 <div class="tabs m_bottom_45">
         <section class="tabs_content shadow r_corners">
                 <div id="tab-2">
@@ -207,6 +206,33 @@
             document.getElementById("error_unique_email").innerHTML = 'Email Address Can not be Empty';
             is_email_unique = false;
         }
+        
+        serverPage = '<?php echo base_url() ?>customer_controller/check_email/' + customer_email;
+        xmlhttp.open("GET", serverPage);
+        xmlhttp.onreadystatechange = function ()
+        {
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
+            {
+                var email_count = xmlhttp.responseText;
+                if(email_count == 0){
+                    document.getElementById("message_unique_email").innerHTML = 'Email Address is available .';
+                    document.getElementById("error_unique_email").innerHTML = '';
+                    is_email_unique = true;
+                } else {
+                    document.getElementById("message_unique_email").innerHTML = '';
+                    document.getElementById("error_unique_email").innerHTML = 'Error : Email Address already exists !!!';
+                    is_email_unique = false;
+                }
+            }
+        }
+        
+        xmlhttp.send(null);
     }
     
+    function validate_registraion(current_form){
+        if(is_email_unique == false){
+            return false;
+        }
+        return validateStandard(current_form);
+    }
 </script>
