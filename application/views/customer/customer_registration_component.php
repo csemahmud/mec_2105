@@ -143,7 +143,7 @@
                                             <li class="m_bottom_15">
                                                     <label class="d_inline_b m_bottom_5">Country :</label>
                                                     <!--product name select-->
-                                                    <div class="custom_select relative">
+                                                    <div>
                                                             <select required="required" exclude=" " id="country" name="country" err="Please Select a valid country">
                                                                 <option value=" ">Select Country...</option>
                                                                 <script type="text/javascript">
@@ -175,7 +175,7 @@
 </form>
 
 <script type="text/javascript">
-    document.forms["customer_registration_form"].elements["country"].value = "BD";
+    document.forms["customer_registration_form"].elements["country"].value = "JP";
 </script>
 
 <script type="text/javascript">
