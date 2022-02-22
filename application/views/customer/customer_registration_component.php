@@ -214,6 +214,8 @@
             if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
             {
                 var email_count = xmlhttp.responseText;
+                console.log(serverPage);
+                console.log(xmlhttp.responseText);
                 if(email_count == 0){
                     document.getElementById("message_unique_email").innerHTML = 'Email Address is available .';
                     document.getElementById("error_unique_email").innerHTML = '';

@@ -18,6 +18,6 @@ class Customer_Model extends CI_Model {
         $this->db->select("*");
         $this->db->from("tbl_customer");
         $this->db->where("customer_email", $customer_email);
-        $this->db->get()->result();
+        return $this->db->get()->result();
     }
 }
