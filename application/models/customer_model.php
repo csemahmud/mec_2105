@@ -7,10 +7,17 @@
  */
 
 /**
- * Description of customer_model
+ * Description of Customer_Model
  *
- * @author csema_000
+ * @author Mahmudul Hasan Khan CSE
  */
-class customer_model {
+class Customer_Model extends CI_Model {
     //put your code here
+    
+    public function select_customers_by_email($customer_email) {
+        $this->db->select("*");
+        $this->db->from("tbl_customer");
+        $this->db->where("customer_email", $customer_email);
+        $this->db->get()->result();
+    }
 }
