@@ -129,7 +129,7 @@
                                                            class="r_corners full_width">
                                             </li>
                                             <li class="m_bottom_15">
-                                                    <label for="company" class="d_inline_b m_bottom_5">Address :</label>
+                                                    <label for="address" class="d_inline_b m_bottom_5">Address :</label>
                                                     <textarea name="address" rows="6" cols="44" 
                                                               placeholder="Enter Full Mailing Address..." required="required" 
                                                               spellcheck="true" tabindex="12"></textarea>
