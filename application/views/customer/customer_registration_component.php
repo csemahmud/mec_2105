@@ -107,19 +107,19 @@
                                             <li class="m_bottom_15">
                                                     <label for="mobile" class="d_inline_b m_bottom_5">Mobile No :</label>
                                                     <input type="text" id="mobile" name="mobile"
-                                                           maxlength="14" required="required" placeholder="Enter Mobile No ....."
+                                                           maxlength="15" required="required" placeholder="Enter Mobile No ....."
                                                            class="r_corners full_width">
                                             </li>
                                             <li class="m_bottom_15">
                                                     <label for="phone" class="d_inline_b m_bottom_5">Phone No :</label>
                                                     <input type="text" id="phone" name="phone"
-                                                           maxlength="7" placeholder="Enter Phone No ....."
+                                                           maxlength="14" placeholder="Enter Phone No ....."
                                                            class="r_corners full_width">
                                             </li>
                                             <li class="m_bottom_15">
                                                     <label for="fax" class="d_inline_b m_bottom_5">Fax :</label>
                                                     <input type="text" id="fax" name="fax"
-                                                           maxlength="7" placeholder="Enter Fax No ....."
+                                                           maxlength="14" placeholder="Enter Fax No ....."
                                                            class="r_corners full_width">
                                             </li>
                                             <li class="m_bottom_15">
