@@ -7,10 +7,22 @@
  */
 
 /**
- * Description of shipping_model
+ * Description of Shipping_Model
  *
- * @author csema_000
+ * @author Mahmudul Hasan Khan CSE
  */
-class shipping_model {
+class Shipping_Model extends CI_Model {
     //put your code here
+    
+    public function insert_shipping_info($data) {
+        
+        $value_return = $this->db->insert("tbl_shipping", $data);
+        if($value_return > 0){
+            $sdata = array();
+            $sdata["shipping_id"] = $this->db->insert_id();
+            $this->session->set_userdata();
+        }
+        return $value_return;
+        
+    }
 }

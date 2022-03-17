@@ -17,8 +17,8 @@ class Payment_Controller extends CI_Controller {
     public function index(){
             
             $mdata = array();
-            $mdata["all_published_categories"] = $this->front_model->select_categories_by_publication_status(1);
-            $mdata["all_published_manufacturers"] = $this->front_model->select_manufacturers_by_publication_status(1);
+            $mdata["all_published_categories"] = $this->payment_model->select_categories_by_publication_status(1);
+            $mdata["all_published_manufacturers"] = $this->payment_model->select_manufacturers_by_publication_status(1);
             $cdata = array();
             $customer_id = $this->session->userdata("customer_id");
             $shipping_id = $this->session->userdata("shipping_id");
@@ -26,7 +26,7 @@ class Payment_Controller extends CI_Controller {
                 $pdata = array();
                 $pdata["all_payments"] = $this->payment_model->select_all_payments();
                 $cdata["checkout_component"] = $this->load->view("payment/payment_method_component", $pdata, TRUE);
-            } elseif ($shipping_id == null) {
+            } elseif ($shipping_id == NULL) {
                 redirect("cart_controller");
             }
             $data = array();

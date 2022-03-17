@@ -1,4 +1,4 @@
-<?php if(! defined('BASEPATH')) exit('No Direct Script access Allowed');
+<?php if( ! defined('BASEPATH')) exit('No Direct Script access Allowed');
 
 /*
  * To change this license header, choose License Headers in Project Properties.
