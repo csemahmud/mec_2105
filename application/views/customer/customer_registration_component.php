@@ -101,7 +101,7 @@
                                                     <label for="last_name" class="d_inline_b m_bottom_5">Last Name :</label>
                                                     <input type="text" id="last_name" name="last_name"
                                                            regexp="JSVAL_RX_ALPHA" err="Please   Enter   Valid   Last   Name   ....."
-                                                           maxlength="50" required="required" placeholder="Enter Last Name ....."
+                                                           maxlength="25" required="required" placeholder="Enter Last Name ....."
                                                            class="r_corners full_width">
                                             </li>
                                             <li class="m_bottom_15">
@@ -132,7 +132,7 @@
                                                     <label for="address" class="d_inline_b m_bottom_5">Address :</label>
                                                     <textarea name="address" rows="6" cols="44" 
                                                               placeholder="Enter Full Mailing Address..." required="required" 
-                                                              spellcheck="true" tabindex="12"></textarea>
+                                                              spellcheck="true"></textarea>
                                             </li>
                                             <li class="m_bottom_15">
                                                     <label for="city" class="d_inline_b m_bottom_5">City :</label>
@@ -157,7 +157,7 @@
                                             <li class="m_bottom_15">
                                                     <label for="zip_code" class="d_inline_b m_bottom_5">ZIP / Postal Code :</label>
                                                     <input type="text" id="zip_code" name="zip_code" regexp="JSVAL_RX_NUMERIC"
-                                                           maxlength="50" placeholder="Enter Zip Code ....." required="required"
+                                                           placeholder="Enter Zip Code ....." required="required"
                                                            err="ZIP Code Must be Numeric Values Only ..... No Hyphane " maxlength="7"
                                                            required="required"
                                                            class="r_corners full_width">

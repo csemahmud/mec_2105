@@ -39,7 +39,7 @@ class Customer_Controller extends CI_Controller {
             $sdata["alert"] = "Could NOT save Customer Information .";
         }
         $this->session->set_userdata($sdata);
-        rediret("cart_controller");
+        redirect("cart_controller");
     }
     
     public function customer_login() {

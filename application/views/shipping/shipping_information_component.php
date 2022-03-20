@@ -32,19 +32,19 @@
                                         </li>
                                         <li class="m_bottom_15">
                                                 <label for="s_mobile" class="d_inline_b m_bottom_5 required">Mobile No : </label>
-                                                <input type="text" id="s_mobile" name="s_mobile" maxlength="14"
+                                                <input type="text" id="s_mobile" name="s_mobile" maxlength="15"
                                                        required="required" placeholder="Enter Mobile No ....." 
                                                        class="r_corners full_width">
                                         </li>
                                         <li class="m_bottom_15">
                                                 <label for="s_phone" class="d_inline_b m_bottom_5 required">Phone No : </label>
-                                                <input type="text" id="s_phone" name="s_phone" maxlength="7"
+                                                <input type="text" id="s_phone" name="s_phone" maxlength="14"
                                                        required="required" placeholder="Enter Phone No ....." 
                                                        class="r_corners full_width">
                                         </li>
                                         <li class="m_bottom_15">
                                                 <label for="s_fax" class="d_inline_b m_bottom_5 required">Fax : </label>
-                                                <input type="text" id="s_fax" name="s_fax" maxlength="7"
+                                                <input type="text" id="s_fax" name="s_fax" maxlength="14"
                                                        required="required" placeholder="Enter Fax ....." 
                                                        class="r_corners full_width">
                                         </li>
