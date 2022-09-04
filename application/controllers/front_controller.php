@@ -149,4 +149,20 @@ class Front_Controller extends CI_Controller {
             exit();*/
             $this->load->view("shared/front_master_ui", $data);
         }
+        
+        public function order_complete() {
+            
+            $mdata = array();
+            $mdata["all_published_categories"] = $this->front_model->select_categories_by_publication_status(1);
+            $mdata["all_published_manufacturers"] = $this->front_model->select_manufacturers_by_publication_status(1);
+            
+            
+            $data = array();
+            $data["submenu"] = $this->load->view("front/home_submenu_component", $mdata, TRUE);
+            $data["main_content"] = $this->load->view("front/order_complete_component", '', TRUE);
+            $data["title"] = "Order Confirmed";
+            
+            $this->load->view("shared/front_master_ui", $data);
+            
+        }
 }

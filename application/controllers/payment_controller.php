@@ -33,7 +33,7 @@ class Payment_Controller extends CI_Controller {
             $data["submenu"] = $this->load->view("front/home_submenu_component", $mdata, TRUE);
             $data["main_content"] = $this->load->view("cart/cart_component", $cdata, TRUE);
             $data["title"] = "Payment";
-            $this->load->view("shared/front_naster_ui", $data);
+            $this->load->view("shared/front_master_ui", $data);
             
     }
 }

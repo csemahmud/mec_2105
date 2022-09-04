@@ -7,10 +7,14 @@
  */
 
 /**
- * Description of front_order_model
+ * Description of Front_Order_Model
  *
- * @author csema_000
+ * @author Mahmudul Hasan Khan CSE
  */
-class front_order_model {
+class Front_Order_Model extends CI_Model {
     //put your code here
+    
+    public function insert_order_info($data) {
+        return $this->order_model->insert_order_info($data);
+    }
 }

@@ -20,7 +20,7 @@ class Shipping_Model extends CI_Model {
         if($value_return > 0){
             $sdata = array();
             $sdata["shipping_id"] = $this->db->insert_id();
-            $this->session->set_userdata();
+            $this->session->set_userdata($sdata);
         }
         return $value_return;
         

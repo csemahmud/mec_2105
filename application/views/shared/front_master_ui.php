@@ -234,7 +234,7 @@
 											<li>
 												<div class="clearfix">
 													<!--product image-->
-													<img class="f_left m_right_10" src="<?php echo base_url().$content_value['image'];?>" alt="">
+													<img class="top_cart_img f_left m_right_10" src="<?php echo base_url().$content_value['image'];?>" alt="">
 													<!--product description-->
 													<div class="f_left product_description">
                                                                                                             <a href="<?php echo base_url()."front_controller/details_product/".$content_value["id"] ?>" class="color_dark m_bottom_5 d_block">Cursus eleifend elit aenean auctor wisi et urna</a>

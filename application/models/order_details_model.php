@@ -7,10 +7,14 @@
  */
 
 /**
- * Description of order_details_model
+ * Description of Order_Details_Model
  *
- * @author csema_000
+ * @author Mahmudul Hasan Khan CSE
  */
-class order_details_model {
+class Order_Details_Model extends CI_Model {
     //put your code here
+    
+    public function insert_order_details_info($oddata) {
+        $this->db->insert("tbl_order_details", $oddata);
+    }
 }
